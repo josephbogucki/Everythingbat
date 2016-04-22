@@ -15,7 +15,8 @@ echo [7] Internet Test
 echo [8] Colors 
 echo [9] Site Selector
 echo [10] Waiting Simulator
-echo [11] ping website 
+echo [11] Ping Website
+echo [12] Your Name
 echo.
 echo [C] Select color
 echo.
@@ -37,6 +38,7 @@ if %choice%==8 goto :fish8
 if %choice%==9 goto :fish9
 if %choice%==10 goto :fish10
 if %choice%==11 goto :fish12
+if %choice%==12 goto :fish13
 if %choice%==c goto :fish11
 if %choice%==e goto :fish
 :fish 
@@ -246,5 +248,34 @@ set /p target=
 ping %target%
 pause
 goto :end
+:fish13
+cls
+echo ---------------
+echo guess your name
+echo ---------------
+pause
+cls
+echo Enter the last letter of your name
+echo.
+set /p lastlet=
+cls
+echo Enter the first letter of your name
+echo.
+set /p firstlet=
+cls
+echo Enter the second letter of your name 
+echo.
+set /p secondlet=
+cls
+echo Enter the second to last letter of your name
+echo.
+set /p secondtolastlet=
+cls
+echo Enter every other letter inbetween those letters
+echo.
+set /p everylet=
+cls
+echo Your name is %firstlet%%secondlet%%everylet%%secondtolastlet%%lastlet%
+pause
 :end 
 exit
