@@ -15,6 +15,7 @@ echo [7] Internet Test
 echo [8] Colors 
 echo [9] Site Selector
 echo [10] Waiting Simulator
+echo [11] ping website 
 echo.
 echo [C] Select color
 echo.
@@ -35,6 +36,7 @@ if %choice%==7 goto :fish7
 if %choice%==8 goto :fish8
 if %choice%==9 goto :fish9
 if %choice%==10 goto :fish10
+if %choice%==11 goto :fish12
 if %choice%==c goto :fish11
 if %choice%==e goto :fish
 :fish 
@@ -57,6 +59,11 @@ goto :nmg
 echo you guessed right
 echo it only took %guessnum% attempts
 pause
+echo.
+echo [b] back
+echo.
+set /p bec=
+if %bec%==b goto :main
 goto :end
 :fish2
 cls
@@ -232,5 +239,12 @@ if %colorselct%==e color E
 if %colorselct%==f color F
 cls
 goto :main
+:fish12
+cls
+echo Select website to ping.
+set /p target=
+ping %target%
+pause
+goto :end
 :end 
 exit
