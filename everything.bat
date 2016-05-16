@@ -1,10 +1,6 @@
 @ECHO OFF
-title everything
 :main
-ECHO ----------------
-ECHO program selector
-ECHO ----------------
-echo key:
+title program selector
 echo [1] Number Guess
 echo [2] All Search
 echo [3] Count
@@ -17,11 +13,15 @@ echo [9] Site Selector
 echo [10] Waiting Simulator
 echo [11] Ping Website
 echo [12] Your Name
-echo.
-echo [C] Select color
-echo.
-echo [E] Exit
-echo ------------------------------
+echo [13] Math
+echo [14] Lenny
+echo [15] secret codes
+echo [16] Matrix
+echo [17] Computer Info
+echo [18] Clock
+echo [19] {to be added}
+echo [20] This code
+echo [21] Select color
 echo Enter Number to choose Program
 echo.
 set /p choice=
@@ -39,14 +39,24 @@ if %choice%==9 goto :fish9
 if %choice%==10 goto :fish10
 if %choice%==11 goto :fish12
 if %choice%==12 goto :fish13
-if %choice%==c goto :fish11
-if %choice%==e goto :fish
+if %Choice%==13 goto :fish14
+if %choice%==14 goto :fish15
+if %choice%==15 goto :fish16
+if %choice%==21 goto :fish11
+if %choice%==16 goto :fish17
+if %choice%==17 goto :fish18
+if %choice%==18 goto :fish19
+if %choice%==19 goto :fish20
+if %choice%==20 goto :fish21
+if %choice%==exit exit
 :fish 
 exit
 :fish1
 cls
+title Number guess
 set /a answer=%RANDOM%
 set guessnum=0
+set variable1=meme
 echo -----------------------
 echo number guessing game v3
 echo -----------------------
@@ -56,6 +66,7 @@ if %guess% GTR %answer% ECHO lower
 if %guess% LSS %answer% ECHO higher
 if %guess%==%answer% GOTO :nmg1
 set /a guessnum=%guessnum% +1
+if %guess%==%variable1% GOTO :nmg2
 goto :nmg
 :nmg1
 echo you guessed right
@@ -67,8 +78,15 @@ echo.
 set /p bec=
 if %bec%==b goto :main
 goto :end
+:nmg2
+CLS
+ECHO well that was cheating
+ECHO and the number was %answer%
+pause
+goto :end
 :fish2
 cls
+title search engine
 ECHO Search Stuff
 SET /p search=
 start chrome.exe "www.yahoo.com/search?q=%search%"
@@ -77,20 +95,30 @@ start chrome.exe "www.bing.com/search?q=%search%"
 start chrome.exe "www.google.com/search?q=%search%"
 goto :end
 :fish3
-set /a num=1
+cls
+title counting
+ECHO Start from?
+set /p startnum=
+set /a num=%startnum%
+cls
+ECHO Count up by?
+set /p countnum=
 :top
-set /a num=%num%+1
+set /a num=%num%+%countnum%
 echo %num%
 goto top
 goto :end
 :fish4
+title edmodo
 start chrome.exe "www.edmodo.com"
 goto :end
 :fish5
+title free code camp
 start chrome.exe www.freecodecamp.com
 goto :end
 :fish6
 cls
+title Google Search
 ECHO -------------
 ECHO Google Search
 ECHO -------------
@@ -99,6 +127,7 @@ start chrome.exe "www.google.com/search?q=%search%"
 exit
 :fish7
 cls
+title Internet test
 ECHO -------------
 ECHO Internet test
 ECHO -------------
@@ -110,6 +139,7 @@ PAUSE
 goto :end
 :fish8
 cls
+title colors 
 ECHO ---------------------------------------
 ECHO Set number (in seconds) for every color
 ECHO ---------------------------------------
@@ -150,13 +180,15 @@ timeout %clr%
 exit
 :fish9
 cls
+title site selector
 echo ***************************************************************
 echo.
 echo Site Selector
 echo.
 echo ***************************************************************
 echo.
-echo Key: [1] Google - Search Engine
+echo Key: 
+echo [1] Google - Search Engine
 echo [2] Gmail - Mail Server
 echo [3] Bing - Search Engine/Trash
 echo [4] Facebook - Social Networking
@@ -169,7 +201,7 @@ echo [10] YouTube - Online Videos
 echo [11] Answers - Online Encyclopedia
 echo [12] Wikipedia - Online Encyclopedia
 echo.
-echo [e] Exit
+echo [b] Back
 echo.
 echo ***************************************************************
 echo Enter the number of the website which you would like to go to:
@@ -189,18 +221,21 @@ if %udefine%==9 start chrome.exe www.instructables.com
 if %udefine%==10 start chrome.exe www.youtube.com
 if %udefine%==11 start chrome.exe www.answers.com
 if %udefine%==12 start chrome.exe www.wikipedia.com
-if %udefine%==e exit
+if %udefine%==b goto :main
 exit
 :fish10
 cls
+title waiting simulator
 ECHO --------
 ECHO How long
 ECHO --------
 set /p howlong=
 timeout %howlong%
+pause
 exit
 :fish11
 cls
+title Color Selector
 ECHO --------------
 ECHO Color Selector
 ECHO --------------
@@ -243,6 +278,7 @@ cls
 goto :main
 :fish12
 cls
+title website ping
 echo Select website to ping.
 set /p target=
 ping %target%
@@ -250,6 +286,7 @@ pause
 goto :end
 :fish13
 cls
+title the worst thing ever
 echo ---------------
 echo guess your name
 echo ---------------
@@ -277,5 +314,244 @@ set /p everylet=
 cls
 echo Your name is %firstlet%%secondlet%%everylet%%secondtolastlet%%lastlet%
 pause
+goto :end
+:fish14
+cls
+title calculator
+echo ---------
+echo what math
+echo ---------
+echo [1] Adition
+echo [2] Subtraction
+echo [3] Multiplication
+echo [4] Division
+echo.
+set /p mathtpe=
+echo.
+if %mathtpe%==1 goto :math1
+if %mathtpe%==2 goto :math2
+if %mathtpe%==3 goto :math3
+if %mathtpe%==4 goto :math4
+:math1
+cls
+echo -------------------
+echo Choose first Number
+echo -------------------
+echo.
+set /p addnum1=
+echo.
+cls
+echo --------------------
+echo Choose second Number
+echo --------------------
+echo.
+set /p addnum2=
+echo.
+cls
+set /a addnumres=%addnum1% + %addnum2%
+echo -------------
+echo %addnum1% plus %addnum2% is
+echo -------------
+echo %addnumres%
+pause
+goto :end
+:math2
+cls
+echo -------------------
+echo Choose first Number
+echo -------------------
+echo.
+set /p subnum1=
+echo.
+cls
+echo --------------------
+echo Choose second Number
+echo --------------------
+echo.
+set /p subnum2=
+echo.
+cls
+set /a subnumres=%subnum1% - %subnum2%
+echo -------------
+echo %subnum1% minus %subnum2% is
+echo -------------
+echo %subnumres%
+pause
+goto :end
+:math3
+cls
+echo -------------------
+echo Choose first Number
+echo -------------------
+echo.
+set /p mulnum1=
+echo.
+cls
+echo --------------------
+echo Choose second Number
+echo --------------------
+echo.
+set /p mulnum2=
+echo.
+cls
+set /a mulnumres=%mulnum1% * %mulnum2%
+echo -------------
+echo %mulnum1% times %mulnum2% is
+echo -------------
+echo %mulnumres%
+pause
+goto :end
+:math4
+cls
+echo -------------------
+echo Choose first Number
+echo -------------------
+echo.
+set /p divnum1=
+echo.
+cls
+echo --------------------
+echo Choose second Number
+echo --------------------
+echo.
+set /p divnum2=
+echo.
+cls
+set /a divnumres=%divnum1% / %divnum2%
+echo -------------
+echo %divnum1% divided by %divnum2% is
+echo -------------
+echo %divnumres%
+pause
+goto :end
+:fish15
+cls
+title Lenny
+echo ------
+echo Choose
+echo ------
+echo [1] Lenny
+echo [2] Lenny
+echo [3] Lenny
+echo [4] Lenny
+echo.
+set /p lennysel=
+echo.
+if %lennysel%==1 start chrome.exe http://i.imgur.com/CPFakg7.gif
+if %lennysel%==2 start chrome.exe https://45.media.tumblr.com/f239a9e5c220b4577a1b2193a373362c/tumblr_nq9e2jdnCG1uymfyko1_1280.gif
+if %lennysel%==3 start chrome.exe http://vignette1.wikia.nocookie.net/thelennyface/images/2/24/Lenny_face.png/revision/latest?cb=20140728000856
+if %lennysel%==4 start chrome.exe http://i1.kym-cdn.com/photos/images/original/000/820/090/0da.png
+goto :end
+:fish16
+cls
+title secret codes
+echo ------------
+echo Secret Codes
+echo ------------
+echo.
+set /p secretcd=
+echo.
+if %secretcd%==dank memes
+if %secretcd%==Konami Code
+if %secretcd%==
+if %secretcd%==
+:fish17
+cls
+:a
+set /a a=%random%
+if %a% geq 16384 set /a aa=1
+if %a% lss 16384 set /a aa=0
+set /a b=%random%
+if %b% geq 16384 set /a bb=1
+if %b% lss 16384 set /a bb=0
+set /a c=%random%
+if %c% geq 16384 set /a cc=1
+if %c% lss 16384 set /a cc=0
+set /a d=%random%
+if %d% geq 16384 set /a dd=1
+if %d% lss 16384 set /a dd=0
+set /a e=%random%
+if %e% geq 16384 set /a ee=1
+if %e% lss 16384 set /a ee=0
+set /a f=%random%
+if %f% geq 16384 set /a ff=1
+if %f% lss 16384 set /a ff=0
+set /a g=%random%
+if %g% geq 16384 set /a gg=1
+if %g% lss 16384 set /a gg=0
+set /a h=%random%
+if %h% geq 16384 set /a hh=1
+if %h% lss 16384 set /a hh=0
+set /a i=%random%
+if %i% geq 16384 set /a ii=1
+if %i% lss 16384 set /a ii=0
+set /a j=%random%
+if %j% geq 16384 set /a jj=1
+if %j% lss 16384 set /a jj=0
+set /a k=%random%
+if %k% geq 16384 set /a kk=1
+if %k% lss 16384 set /a kk=0
+set /a l=%random%
+if %l% geq 16384 set /a ll=1
+if %l% lss 16384 set /a ll=0
+set /a m=%random%
+if %m% geq 16384 set /a mm=1
+if %m% lss 16384 set /a mm=0
+set /a n=%random%
+if %n% geq 16384 set /a nn=1
+if %n% lss 16384 set /a nn=0
+set /a o=%random%
+if %o% geq 16384 set /a oo=1
+if %o% lss 16384 set /a oo=0
+set /a p=%random%
+if %p% geq 16384 set /a pp=1
+if %p% lss 16384 set /a pp=0
+set /a q=%random%
+if %q% geq 16384 set /a qq=1
+if %q% lss 16384 set /a qq=0
+set /a r=%random%
+if %r% geq 16384 set /a rr=1
+if %r% lss 16384 set /a rr=0
+set /a s=%random%
+if %s% geq 16384 set /a ss=1
+if %s% lss 16384 set /a ss=0
+set /a t=%random%
+if %t% geq 16384 set /a tt=1
+if %t% lss 16384 set /a tt=0
+set /a u=%random%
+if %u% geq 16384 set /a uu=1
+if %u% lss 16384 set /a uu=0
+set /a v=%random%
+if %v% geq 16384 set /a vv=1
+if %v% lss 16384 set /a vv=0
+set /a w=%random%
+if %w% geq 16384 set /a ww=1
+if %w% lss 16384 set /a ww=0
+set /a x=%random%
+if %x% geq 16384 set /a xx=1
+if %x% lss 16384 set /a xx=0
+set /a y=%random%
+if %y% geq 16384 set /a yy=1
+if %y% lss 16384 set /a yy=0
+set /a z=%random%
+if %z% geq 16384 set /a zz=1
+if %z% lss 16384 set /a zz=0
+echo %aa% %bb% %cc% %dd% %ee% %ff% %gg% %hh% %ii% %jj% %kk% %ll% %mm% %nn% %oo% %pp% %qq% %rr% %ss% %tt% %uu% %vv% %ww% %xx% %yy% %zz%
+goto a
+:fish18
+cls
+MSINFO32
+:fish19
+cls
+:tme
+cls
+echo %time%
+goto :tme
+:fish20
+
+goto :end
+:fish21
+start 
+goto :end
 :end 
 exit
