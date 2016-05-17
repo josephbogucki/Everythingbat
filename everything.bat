@@ -19,9 +19,10 @@ echo [15] secret codes
 echo [16] Matrix
 echo [17] Computer Info
 echo [18] Clock
-echo [19] {to be added}
+echo [19] how to use this
 echo [20] This code
 echo [21] Select color
+echo [22] PAGE 2
 echo Enter Number to choose Program
 echo.
 set /p choice=
@@ -48,7 +49,61 @@ if %choice%==17 goto :fish18
 if %choice%==18 goto :fish19
 if %choice%==19 goto :fish20
 if %choice%==20 goto :fish21
+if %choice%==21 goto :page2
 if %choice%==exit exit
+:page2
+cls
+title Page 2
+echo [23] {nothing yet}
+echo [24] {nothing yet}
+echo [25] {nothing yet}
+echo [26] {nothing yet}
+echo [27] {nothing yet}
+echo [28] {nothing yet}
+echo [29] {nothing yet}
+echo [30] {nothing yet}
+echo [31] {nothing yet}
+echo [32] {nothing yet}
+echo [33] {nothing yet}
+echo [34] {nothing yet}
+echo [35] {nothing yet}
+echo [36] {nothing yet}
+echo [37] {nothing yet}
+echo [38] {nothing yet}
+echo [39] {nothing yet}
+echo [40] {nothing yet}
+echo [41] {nothing yet}
+echo [42] {nothing yet}
+echo [43] {nothing yet}
+echo [44] PAGE 1
+echo Enter Number to choose program
+echo.
+set /p choice2=
+echo.
+------------------------------------
+if %choice2%==23 goto :fish22
+if %choice2%==24 goto :fish23
+if %choice2%==25 goto :fish24
+if %choice2%==26 goto :fish25
+if %choice2%==27 goto :fish26
+if %choice2%==28 goto :fish27
+if %choice2%==29 goto :fish28
+if %choice2%==30 goto :fish29
+if %choice2%==31 goto :fish30
+if %choice2%==32 goto :fish31
+if %choice2%==33 goto :fish32
+if %choice2%==34 goto :fish33
+if %choice2%==35 goto :fish34
+if %choice2%==36 goto :fish35
+if %choice2%==37 goto :fish36
+if %choice2%==38 goto :fish37
+if %choice2%==39 goto :fish38
+if %choice2%==40 goto :fish39
+if %choice2%==41 goto :fish40
+if %choice2%==42 goto :fish41
+if %choice2%==43 goto :fish42
+if %choice2%==44 goto :main 
+if %choice2%==exit exit
 :fish 
 exit
 :fish1
@@ -333,6 +388,7 @@ if %mathtpe%==2 goto :math2
 if %mathtpe%==3 goto :math3
 if %mathtpe%==4 goto :math4
 :math1
+title Addition
 cls
 echo -------------------
 echo Choose first Number
@@ -356,6 +412,7 @@ echo %addnumres%
 pause
 goto :end
 :math2
+title Subtraction
 cls
 echo -------------------
 echo Choose first Number
@@ -379,6 +436,7 @@ echo %subnumres%
 pause
 goto :end
 :math3
+title Multiplication
 cls
 echo -------------------
 echo Choose first Number
@@ -402,6 +460,7 @@ echo %mulnumres%
 pause
 goto :end
 :math4
+title Division
 cls
 echo -------------------
 echo Choose first Number
@@ -541,6 +600,7 @@ goto a
 :fish18
 cls
 MSINFO32
+goto :end
 :fish19
 cls
 :tme
@@ -548,10 +608,12 @@ cls
 echo %time%
 goto :tme
 :fish20
-
+cls
+echo on the main screen just press the number you want to choose and then press enter and then use the program its not that complicated.
+pause
 goto :end
 :fish21
-start 
+start chrome.exe https://github.com/josephbogucki/Everythingbat/blob/master/everything.bat
 goto :end
 :end 
 exit
