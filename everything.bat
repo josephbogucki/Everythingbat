@@ -74,8 +74,8 @@ echo [39] {nothing yet}
 echo [40] {nothing yet}
 echo [41] {nothing yet}
 echo [42] {nothing yet}
-echo [43] {nothing yet}
-echo [44] PAGE 1
+echo [43] PAGE 1
+echo [44] PAGE 3
 echo Enter Number to choose program
 echo.
 set /p choice2=
@@ -101,8 +101,61 @@ if %choice2%==39 goto :fish38
 if %choice2%==40 goto :fish39
 if %choice2%==41 goto :fish40
 if %choice2%==42 goto :fish41
-if %choice2%==43 goto :fish42
-if %choice2%==44 goto :main 
+if %choice2%==43 goto :main
+if %choice2%==44 goto :page3
+if %choice2%==exit exit
+:page3
+cls
+title Page 3
+echo [45] {nothing yet}
+echo [46] {nothing yet}
+echo [47] {nothing yet}
+echo [48] {nothing yet}
+echo [49] {nothing yet}
+echo [50] {nothing yet}
+echo [51] {nothing yet}
+echo [52] {nothing yet}
+echo [53] {nothing yet}
+echo [54] {nothing yet}
+echo [55] {nothing yet}
+echo [56] {nothing yet}
+echo [57] {nothing yet}
+echo [58] {nothing yet}
+echo [59] {nothing yet}
+echo [60] {nothing yet}
+echo [61] {nothing yet}
+echo [62] {nothing yet}
+echo [63] {nothing yet}
+echo [64] {nothing yet}
+echo [65] {nothing yet}
+echo [66] PAGE 2
+echo Enter Number to choose program
+echo.
+set /p choice2=
+echo.
+------------------------------------
+if %choice2%==45 goto :fish42
+if %choice2%==46 goto :fish43
+if %choice2%==47 goto :fish44
+if %choice2%==48 goto :fish45
+if %choice2%==49 goto :fish46
+if %choice2%==50 goto :fish47
+if %choice2%==51 goto :fish48
+if %choice2%==52 goto :fish49
+if %choice2%==53 goto :fish50
+if %choice2%==54 goto :fish51
+if %choice2%==55 goto :fish52
+if %choice2%==56 goto :fish53
+if %choice2%==57 goto :fish54
+if %choice2%==58 goto :fish55
+if %choice2%==59 goto :fish56
+if %choice2%==60 goto :fish57
+if %choice2%==61 goto :fish58
+if %choice2%==62 goto :fish59
+if %choice2%==63 goto :fish60
+if %choice2%==64 goto :fish61
+if %choice2%==65 goto :fish62
+if %choice2%==66 goto :page2
 if %choice2%==exit exit
 :fish 
 exit
