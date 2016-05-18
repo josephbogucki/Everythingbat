@@ -55,7 +55,7 @@ if %choice%==exit exit
 cls
 title Page 2
 echo [23] Text Picture
-echo [24] {nothing yet}
+echo [24] loop
 echo [25] {nothing yet}
 echo [26] {nothing yet}
 echo [27] {nothing yet}
@@ -569,6 +569,7 @@ if %secretcd%==
 if %secretcd%==
 :fish17
 cls
+color 0A
 :a
 set /a a=%random%
 if %a% geq 16384 set /a aa=1
@@ -729,5 +730,12 @@ echo _¶¶¶¶¶¶¶¶__¶¶¶¶¶¶¶¶_¶¶__¶¶¶¶¶¶¶¶__¶¶¶¶¶¶¶�
 echo __¶¶¶¶_¶¶____¶¶¶¶¶¶_¶¶___¶¶¶¶_¶¶___¶¶¶¶_¶¶__¶¶¶¶¶_
 pause
 goto :end
+:fish23
+cls
+set loopval = 0
+:startloop
+set /a loopval = %loopval% + 1
+echo %loopval% 
+goto :startloop
 :end 
 exit
