@@ -56,7 +56,7 @@ cls
 title Page 2
 echo [23] Text Picture
 echo [24] loop
-echo [25] {nothing yet}
+echo [25] Text file creator
 echo [26] {nothing yet}
 echo [27] {nothing yet}
 echo [28] {nothing yet}
@@ -231,6 +231,7 @@ ECHO -------------
 ECHO Google Search
 ECHO -------------
 SET /P search=
+@echo %time% %search% >> "E:\bat\googlesearchs.txt"
 start chrome.exe "www.google.com/search?q=%search%"
 exit
 :fish7
@@ -737,5 +738,15 @@ set loopval = 0
 set /a loopval = %loopval% + 1
 echo %loopval% 
 goto :startloop
+:fish24
+cls
+echo File Name?
+set /p filename=
+cls
+echo text in file?
+set /p filetext=
+@echo %filetext% > %filename%.txt
+echo done
+pause
 :end 
 exit
