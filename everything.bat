@@ -57,7 +57,7 @@ title Page 2
 echo [23] Text Picture
 echo [24] loop
 echo [25] Text file creator
-echo [26] A Loading Born
+echo [26] A Loading Bar
 echo [27] {nothing yet}
 echo [28] {nothing yet}
 echo [29] {nothing yet}
@@ -765,6 +765,7 @@ echo done
 pause
 :fish25
 cls
+title LOADING BAR
 echo loading
 echo -------
 pause>nul
@@ -798,7 +799,6 @@ echo #######
 pause>nul
 cls
 echo done
-pause>nul
 goto :end 
 :end 
 exit
