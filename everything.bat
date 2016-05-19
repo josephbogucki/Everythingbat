@@ -227,13 +227,28 @@ goto :end
 :fish6
 cls
 title Google Search
+echo Record google searc?
+echo [1] Yes [2] No
+set /p googlesearchanswer=
+if %googlesearchanswer%==1 goto :searchrecord
+if %googlesearchanswer%==2 goto :searchno
+:searchrecord
+cls
 ECHO -------------
 ECHO Google Search
 ECHO -------------
 SET /P search=
 @echo %time% %search% >> "E:\bat\googlesearchs.txt"
 start chrome.exe "www.google.com/search?q=%search%"
-exit
+goto :end
+:searchno
+cls
+ECHO -------------
+ECHO Google Search
+ECHO -------------
+SET /P search=
+start chrome.exe "www.google.com/search?q=%search%"
+goto :end
 :fish7
 cls
 title Internet test
