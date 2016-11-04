@@ -763,6 +763,7 @@ set /p filetext=
 @echo %filetext% > %filename%.txt
 echo done
 pause
+:end
 :fish25
 cls
 title LOADING BAR
